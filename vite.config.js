@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: "dist",
+    outDir: "dist", // thư mục build
     rollupOptions: {
       output: {
         entryFileNames: "assets/[name].[hash].js",
@@ -12,10 +12,10 @@ export default defineConfig({
         assetFileNames: "assets/[name].[hash].[ext]",
       },
     },
-    minify: "esbuild",
-    sourcemap: true,
+    minify: "esbuild", // Sử dụng esbuild để minify
+    sourcemap: true, // có thể tắt ở production nếu không cần thiết
   },
   server: {
-    open: true,
+    open: true, // tự động mở trình duyệt khi chạy dev server
   },
 });

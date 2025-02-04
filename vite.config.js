@@ -14,7 +14,6 @@ export default defineConfig({
     },
     minify: "esbuild",
     sourcemap: true,
-    outDir: "dist",
   },
   server: {
     open: true,

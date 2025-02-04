@@ -15,6 +15,9 @@ export default defineConfig({
       },
     },
   },
+  optimizeDeps: {
+    include: ["@babel/runtime"],
+  },
   server: {
     open: true, // Tự động mở trình duyệt khi chạy dev server
   },

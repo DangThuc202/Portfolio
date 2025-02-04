@@ -104,7 +104,7 @@ const ContactPage = () => {
           data-aos-duration="1100"
           className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2"
         >
-          Got a question? Send me a message, and I'll get back to you soon.
+          Open for professional connections.
         </p>
       </div>
 
@@ -112,7 +112,7 @@ const ContactPage = () => {
         className="h-auto py-10 flex items-center justify-center px-[5%] md:px-0"
         id="Contact"
       >
-        <div className="container px-[1%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[45%_55%] 2xl:grid-cols-[35%_65%] gap-12">
+        <div className="container px-[1%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1">
           <div
             data-aos="fade-right"
             data-aos-duration="1200"
@@ -121,22 +121,21 @@ const ContactPage = () => {
             <div className="flex justify-between items-start mb-8">
               <div>
                 <h2 className="text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                  Get in Touch
+                  Connect with me                
                 </h2>
                 <p className="text-gray-400">
-                  Have something to discuss? Send me a message and let's talk.
+                  Available for collaboration and opportunities.
                 </p>
               </div>
               <Share2 className="w-10 h-10 text-[#6366f1] opacity-50" />
             </div>
 
-            <form 
+            {/* <form 
               action="https://formsubmit.co/ekizulfarrachman@gmail.com"
               method="POST"
               onSubmit={handleSubmit}
               className="space-y-6"
             >
-              {/* FormSubmit Configuration */}
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
 
@@ -200,18 +199,20 @@ const ContactPage = () => {
                 <Send className="w-5 h-5" />
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
-            </form>
+            </form> */}
 
             <div className="mt-10 pt-6 border-t border-white/10 flex justify-center space-x-6">
               <SocialLinks />
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-3 py-3 md:p-10 md:py-8 shadow-2xl transform transition-all duration-300 hover:shadow-[#6366f1]/10">
+          {/* <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-3 py-3 md:p-10 md:py-8 shadow-2xl transform transition-all duration-300 hover:shadow-[#6366f1]/10">
             <Komentar />
-          </div>
+          </div> */}
         </div>
       </div>
+
+      <div></div>
     </>
   );
 };

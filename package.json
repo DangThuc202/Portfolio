@@ -1,6 +1,7 @@
 {
-  "name": "portofolio-v5",
-  "private": true,
+  "name": "Portfolio",
+  "homepage": "https://DangThuc202.github.io/Portfolio/",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@babel/core": "^7.9.0",
@@ -33,6 +34,7 @@
     "dialog": "^0.3.1",
     "firebase": "^11.0.1",
     "framer-motion": "^11.15.0",
+    "gh-pages": "^6.3.0",
     "gsap": "^3.12.5",
     "headlessui": "^0.0.0",
     "lucide-react": "^0.454.0",

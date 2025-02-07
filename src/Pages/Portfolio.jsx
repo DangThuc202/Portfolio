@@ -265,7 +265,7 @@ export default function FullWidthTabs() {
             />
           </Tabs>
         </AppBar>
-        <SwipeableViews
+        <div
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={value}
           onChangeIndex={setValue}>
@@ -366,7 +366,7 @@ export default function FullWidthTabs() {
               </div>
             </div>
           </TabPanel>
-        </SwipeableViews>
+        </div>
       </Box>
     </div>
   );

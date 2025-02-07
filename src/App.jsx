@@ -1,35 +1,89 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import "./index.css";
+// import Home from "./Pages/Home";
+// import About from "./Pages/About";
+// import AnimatedBackground from "./components/Background";
+// import Navbar from "./components/Navbar";
+// import Portfolio from "./Pages/Portfolio";
+// import ContactPage from "./Pages/Contact";
+import ProjectDetails from "./components/ProjectDetail";
+import WelcomeScreen from "./pages/WelcomeScreen";
+import { AnimatePresence } from "framer-motion";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <AnimatePresence mode="wait">
+        {showWelcome && (
+          <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
+        )}
+      </AnimatePresence>
+
+      {!showWelcome && (
+        <>
+          {/* <Navbar />
+          <AnimatedBackground />
+          <Home />
+          <About />
+          <Portfolio />
+          <ContactPage />
+          <footer>
+            <center>
+              <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
+              <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
+                © 2025{" "}
+                <a href="https://flowbite.com/" className="hover:underline">
+                  Thuc Dang
+                </a>
+                . All Rights Reserved.
+              </span>
+            </center>
+          </footer> */}
+          <div className="text-[40px] text-[white]">abc</div>
+        </>
+      )}
     </>
-  )
+  );
+};
+
+const ProjectPageLayout = () => (
+  <>
+    <ProjectDetails />
+    <footer>
+      <center>
+        <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
+        <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
+          © 2023{" "}
+          <a href="https://flowbite.com/" className="hover:underline">
+            Thuc Dang™
+          </a>
+          . All Rights Reserved.
+        </span>
+      </center>
+    </footer>
+  </>
+);
+
+function App() {
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <LandingPage
+              showWelcome={showWelcome}
+              setShowWelcome={setShowWelcome}
+            />
+          }
+        />
+        <Route path="/project/:id" element={<ProjectPageLayout />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

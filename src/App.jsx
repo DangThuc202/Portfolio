@@ -40,7 +40,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
               </span>
             </center>
           </footer> */}
-          <div className="text-[40px] text-[white]">ABC</div>
+          <div className="text-[40px] text-[white]">THUC</div>
         </>
       )}
     </>

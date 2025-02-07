@@ -7,5 +7,5 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base: process.env.NODE_ENV === "production" ? "/Portfolio/" : "/"
+  // base: process.env.NODE_ENV === "production" ? "/Portfolio/" : "/"
 })

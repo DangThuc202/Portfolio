@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./index.css";
-// import Home from "./Pages/Home";
-// import About from "./Pages/About";
-// import AnimatedBackground from "./components/Background";
-// import Navbar from "./components/Navbar";
-// import Portfolio from "./Pages/Portfolio";
-// import ContactPage from "./Pages/Contact";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import AnimatedBackground from "./components/Background";
+import Navbar from "./components/Navbar";
+import Portfolio from "./pages/Portfolio";
+import ContactPage from "./pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./pages/WelcomeScreen";
 import { AnimatePresence } from "framer-motion";
@@ -22,7 +22,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
 
       {!showWelcome && (
         <>
-          {/* <Navbar />
+          <Navbar />
           <AnimatedBackground />
           <Home />
           <About />
@@ -39,8 +39,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                 . All Rights Reserved.
               </span>
             </center>
-          </footer> */}
-          <div className="text-[40px] text-[white]">THUC1</div>
+          </footer>
         </>
       )}
     </>
@@ -66,7 +65,7 @@ const ProjectPageLayout = () => (
 );
 
 function App() {
-  const [showWelcome, setShowWelcome] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(false);
 
   return (
     <BrowserRouter>
@@ -75,10 +74,10 @@ function App() {
           path="/"
           element={
             <LandingPage
-              showWelcome={showWelcome}
-              setShowWelcome={setShowWelcome}
+              showWelcome={!showWelcome}
+              setShowWelcome={(value) => setShowWelcome(!value)}
             />
-          }
+          }        
         />
         <Route path="/project/:id" element={<ProjectPageLayout />} />
       </Routes>

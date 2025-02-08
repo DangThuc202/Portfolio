@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     react()
-  ],
+  ]
   // base: process.env.NODE_ENV === "production" ? "/Portfolio/" : "/"
 })

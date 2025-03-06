@@ -168,7 +168,7 @@ const AboutPage = () => {
               through hands-on projects, Codewars challenges, and exploring
               advanced JavaScript and web technologies. Outside of work, I stay
               active at the gym and constantly push myself to grow as a
-              developer.
+              developer
             </span>
           </div>
 

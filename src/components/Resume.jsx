@@ -11,7 +11,7 @@ const infos = [
     title2: "Bachelor of Engineering in Information Technology",
     time: "2020-2024",
     point: "GPA: 3.0/4.0",
-    university: "Hutech University",
+    university: "HUTECH University",
   },
   {
     title: "Internal Projects",

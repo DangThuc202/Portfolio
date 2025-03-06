@@ -19,6 +19,7 @@ function TabPanel({ children, value, index, ...other }) {
   return (
     <div
       role="tabpanel"
+      key={index}
       hidden={value !== index}
       id={`full-width-tabpanel-${index}`}
       aria-labelledby={`full-width-tab-${index}`}
@@ -235,7 +236,7 @@ export default function FullWidthTabs() {
         <div
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={value}
-          onChangeIndex={setValue}>
+          onChange={setValue}>
           <TabPanel value={value} index={0} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
               <div className="lg:8 w-full">

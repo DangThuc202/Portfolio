@@ -18,12 +18,12 @@ const infos = [
     title2: "Medical appointment booking website",
     time: "11/2024 - Present",
     info: [
-      "Generated statistical data and visualized the top-performing doctor of the month through interactive charts",
-      "Implemented scheduling features, enabling users to book medical appointments seamlessly",
-      "Integrated multilingual support on the user interface using React-i18next for an inclusive experience",
-      "Designed a calendar feature for doctors using React Big Calendar, allowing them to view appointment details and mark unavailable days efficiently",
-      "Set up automated email reminders to notify users about their appointments",
-      "Doctor rating permission",
+      "Generated statistical data and visualized the top-performing doctor of the month through interactive charts.",
+      "Implemented scheduling features, enabling users to book medical appointments seamlessly.",
+      "Integrated multilingual support on the user interface using React-i18next for an inclusive experience.",
+      "Designed a calendar feature for doctors using React Big Calendar, allowing them to view appointment details and mark unavailable days efficiently.",
+      "Set up automated email reminders to notify users about their appointments.",
+      "Doctor rating permission.",
     ],
   },
   {

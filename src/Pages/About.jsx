@@ -1,17 +1,8 @@
-import React, { useEffect, memo, useMemo } from "react";
-import {
-  FileText,
-  Code,
-  Award,
-  Globe,
-  ArrowUpRight,
-  Sparkles,
-  UserCheck,
-} from "lucide-react";
+import { useEffect, memo } from "react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Memoized Components
 const Header = memo(() => (
   <div className="text-center lg:mb-8 mb-2 px-[5%]">
     <div className="inline-block relative group">
@@ -22,14 +13,14 @@ const Header = memo(() => (
         About Me
       </h2>
     </div>
-    <p
+    <span
       className="mt-2 text-gray-400 max-w-2xl mx-auto text-base sm:text-lg flex items-center justify-center gap-2"
       data-aos="zoom-in-up"
       data-aos-duration="800">
       <Sparkles className="w-5 h-5 text-purple-400" />
       Transforming ideas into digital experiences
       <Sparkles className="w-5 h-5 text-purple-400" />
-    </p>
+    </span>
   </div>
 ));
 
@@ -94,21 +85,21 @@ const StatCard = memo(
         </div>
 
         <div>
-          <p
+          <span
             className="text-sm uppercase tracking-wider text-gray-300 mb-2"
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-anchor-placement="top-bottom">
             {label}
-          </p>
+          </span>
           <div className="flex items-center justify-between">
-            <p
+            <span
               className="text-xs text-gray-400"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-anchor-placement="top-bottom">
               {description}
-            </p>
+            </span>
             <ArrowUpRight className="w-4 h-4 text-white/50 group-hover:text-white transition-colors" />
           </div>
         </div>
@@ -118,23 +109,6 @@ const StatCard = memo(
 );
 
 const AboutPage = () => {
-  // Memoized calculations
-  const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
-    const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
-    const storedCertificates = JSON.parse(
-      localStorage.getItem("certificates") || "[]"
-    );
-
-    const experience = "< 1";
-
-    return {
-      totalProjects: storedProjects.length,
-      totalCertificates: storedCertificates.length,
-      YearExperience: experience,
-    };
-  }, []);
-
-  // Optimized AOS initialization
   useEffect(() => {
     const initAOS = () => {
       AOS.init({
@@ -144,7 +118,6 @@ const AboutPage = () => {
 
     initAOS();
 
-    // Debounced resize handler
     let resizeTimer;
     const handleResize = () => {
       clearTimeout(resizeTimer);
@@ -158,11 +131,9 @@ const AboutPage = () => {
     };
   }, []);
 
-  // Memoized stats data
-
   return (
     <div
-      className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0"
+      className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm:mt-0"
       id="About">
       <Header />
 
@@ -177,28 +148,28 @@ const AboutPage = () => {
                 Hello, I'm
               </span>
               <span
-                className="block mt-2 text-gray-200"
+                className="block mt-2 text-gray-200 mb-5"
                 data-aos="fade-right"
                 data-aos-duration="1300">
                 Dang Hoang Thuc
               </span>
             </h2>
 
-            <p
-              className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
+            <span
+              className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0 "
               data-aos="fade-right"
               data-aos-duration="1500">
-              A passionate React.js developer with less than 1 year of
-              experience crafting dynamic, responsive user interfaces and
-              bringing designs to life. My career goal is to deepen my expertise
-              in frontend development while broadening my capabilities in
-              backend technologies, enabling me to excel as a full-stack
-              developer and deliver comprehensive, impactful solutions. while
-              contributing to impactful projects within a collaborative and
-              innovative team. Outside of work, I stay active at the gym and
-              sharpen my coding skills on Codewars, with a strong focus on
-              mastering advanced JavaScript and React features.
-            </p>
+              A passionate Fullstack Developer specializing in Node.js and
+              React.js, with less than 1 year of experience building dynamic,
+              responsive applications. My goal is to deepen my expertise in
+              fullstack development, mastering both frontend and backend
+              technologies to deliver scalable, impactful solutions. I thrive in
+              collaborative, innovative teams and continuously sharpen my skills
+              through hands-on projects, Codewars challenges, and exploring
+              advanced JavaScript and web technologies. Outside of work, I stay
+              active at the gym and constantly push myself to grow as a
+              developer.
+            </span>
           </div>
 
           <ProfileImage />

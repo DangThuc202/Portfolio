@@ -4,7 +4,7 @@ const infos = [
   {
     title: "Summary",
     title2: "Dang Hoang Thuc",
-    desc: "Innovative and results-oriented Frontend ReactJS Developer with less than 1 year of experience, specializing in ReactJS and modern web technologies. Passionate about coding and UI/UX design, with a strong focus on achieving mastery in frontend development. Dedicated to advancing skills in intermediate to advanced ReactJS concepts, state management, and performance optimization, with a goal to become a successful and well-rounded IT professional.",
+    desc: "Innovative and results-oriented Fullstack Developer with less than 1 year of experience, specializing in Node.js, ReactJS, and modern web technologies. Passionate about coding, UI/UX design, and scalable backend solutions, with a strong focus on mastering fullstack development. Dedicated to advancing skills in frontend optimization, state management, and backend architecture, aiming to become a well-rounded and successful IT professional.",
   },
   {
     title: "Education",

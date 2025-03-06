@@ -10,7 +10,7 @@ import Box from "@mui/material/Box";
 import CardProject from "../components/CardProject";
 import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
-import "aos/dist/aos.css";
+// import "aos/dist/aos.css";
 import Certificate from "../components/Certificate";
 import { Code, Award, Boxes, User } from "lucide-react";
 import Resume from "../components/Resume";
@@ -94,39 +94,6 @@ export default function FullWidthTabs() {
       once: false, // This will make animations occur only once
     });
   }, []);
-
-  const fetchData = useCallback(async () => {
-    try {
-      const projectCollection = collection(db, "projects");
-      const certificateCollection = collection(db, "certificates");
-
-      const [projectSnapshot, certificateSnapshot] = await Promise.all([
-        getDocs(projectCollection),
-        getDocs(certificateCollection),
-      ]);
-
-      const projectData = projectSnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-        TechStack: doc.data().TechStack || [],
-      }));
-
-      const certificateData = certificateSnapshot.docs.map((doc) => doc.data());
-
-      setProjects(projectData);
-      setCertificates(certificateData);
-
-      // Store in localStorage
-      localStorage.setItem("projects", JSON.stringify(projectData));
-      localStorage.setItem("certificates", JSON.stringify(certificateData));
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

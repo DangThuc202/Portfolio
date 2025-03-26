@@ -63,6 +63,7 @@ const ProjectDetails = () => {
         "Use of public/private key pair for transaction authentication and user verification.",
         "Increase in product quantity in the cart will lead to price increase.",
       ],
+      Img: "/public/b.jpg",
       Title: "Backend eCommerce",
     },
   ];
